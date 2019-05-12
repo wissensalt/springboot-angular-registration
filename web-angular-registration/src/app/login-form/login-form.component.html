@@ -1,0 +1,17 @@
+<div class="text-center">
+    <div class="container">
+        <form [formGroup]="loginForm" class="form-signin">
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="mb-4" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+                    <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
+                    <label for="inputEmail" class="sr-only">Email address</label>
+                    <input type="text" placeholder="User Name" formControlName="userName" class="form-control" id="username">
+                    <label for="inputEmail" class="sr-only">Input Password</label>
+                    <input type="password" (focus)="clearPass()" placeholder="Password" formControlName="password" class="form-control" id="password">
+                    <button class="btn btn-lg btn-primary btn-block" style="width: 100%; background-color: purple; color: white" (click)="login()" type="submit">Sign in</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

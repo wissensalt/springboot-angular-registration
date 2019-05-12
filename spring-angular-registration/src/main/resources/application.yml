@@ -1,0 +1,70 @@
+#============================================================================
+# SERVER
+#============================================================================
+server:
+  port: 8081
+  tomcat:
+    max-threads: 500
+  connection-timeout: 30000 #in milisecond
+#  servlet:
+#    context-path : /sar
+
+#============================================================================
+# SPRING
+#============================================================================
+spring:
+  profiles:
+    active: local
+  application:
+    name : spring-angular-registration
+  datasource:
+    driver-class-name : org.postgresql.Driver
+    url : jdbc:postgresql://${db.host}:${db.port}/${db.name}
+    username : ${db.username}
+    password : ${db.password}
+    hikari:
+      minimumIdle: 1
+      maximumPoolSize: 5
+      idleTimeout: 30000
+      poolName: sar-connection-pooling
+      maxLifetime: 2000000
+      connectionTimeout: 60000
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        naming_strategy : org.hibernate.cfg.EJB3NamingStrategy
+        dialect : org.hibernate.dialect.PostgreSQL9Dialect
+        ddl-auto : validate     # Hibernate ddl auto (create, create-drop, validate, update)
+
+#============================================================================
+# DATABASE
+#============================================================================
+db:
+  name : test_security
+  host : localhost
+  port : 5432
+  username : postgres
+  password : pgadmin
+  auto-reconnect : true
+  ssl : false
+
+#============================================================================
+# LOGGER
+#============================================================================
+logging:
+  config: classpath:logback-spring.xml
+  file : ${log.file.path}
+  level:
+    com.wissensalt.test.sar : DEBUG
+#    org.springframework.security : DEBUG
+
+#============================================================================
+# LOG FILE PATH
+#============================================================================
+log :
+  file :
+    path : /home/fauzi/sar/sar.log

@@ -1,0 +1,87 @@
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-2">
+            <h3>Registration</h3>
+        </div>
+        <div class="col-md-4">
+            <div class="alert alert-danger" *ngIf="submitted" >
+                <div *ngIf="registrationForm.controls['mobileNumber'].errors">
+                    <div *ngIf="registrationForm.controls['mobileNumber'].errors.required">Mobile Number is required</div>
+                    <div *ngIf="registrationForm.controls['mobileNumber'].errors.pattern">Please Enter Valid Indonesian
+                        Phone Number</div>
+                </div>
+                <div *ngIf="registrationForm.controls['firstName'].errors">
+                    <div *ngIf="registrationForm.controls['firstName'].errors.required">First Name is required</div>
+                </div>
+                <div *ngIf="registrationForm.controls['lastName'].errors">
+                    <div *ngIf="registrationForm.controls['lastName'].errors.required">Last Name is required</div>
+                </div>
+                <div *ngIf="registrationForm.controls['email'].errors">
+                    <div *ngIf="registrationForm.controls['email'].errors.required">Email is required</div>
+                    <div *ngIf="registrationForm.controls['email'].errors.email">Please Enter Valid Email Format</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form [formGroup]="registrationForm">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <input type="text" formControlName="mobileNumber" placeholder="Mobile Number" class="form-control"
+                        id="mobile_number">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="First Name" class="form-control" id="first_name" formControlName="firstName">
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="lastName" placeholder="Last Name" class="form-control" id="last_name">
+                </div>
+                <table cellpadding="10px">
+                    <tr>
+                        <td>
+                            <div class="form-group">
+                                <select class="form-control" id="month" formControlName="month">
+                                    <option value="month" disabled>Month</option>
+                                    <option value="{{a}}" *ngFor="let a of month">{{a}}</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select class="form-control" id="day" placeholder="day" formControlName="day">
+                                    <option value="day" disabled>Day</option>
+                                    <option value="{{a}}" *ngFor="let a of day">{{a}}</option>
+                                </select>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select class="form-control" id="year" formControlName="year">
+                                    <option value="year" disabled>year</option>
+                                    <option value="{{a}}" *ngFor="let a of year">{{a}}</option>
+                                </select>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+                <label class="radio-inline" for="male">
+                    <input id="male" type="radio" value="1" name="gender" formControlName="gender" checked> Male
+                </label>
+                <label class="radio-inline" for="female">
+                    <input id="male" type="radio" value="0" name="gender" formControlName="gender"> Female
+                </label>
+
+                <div class="form-group">
+                    <input type="email" formControlName="email" placeholder="Email" class="form-control" id="email">
+                </div>
+                <button type="button" [disabled]="buttonRegister==false" (click)="register()" style="padding:10px 250px; background-color: purple; color: white"
+                    class="btn ">Register</button>
+            </div>
+            <div class="col-md-6">
+                <div *ngIf="visible==true">
+                    <app-login-form></app-login-form>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
