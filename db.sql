@@ -4,7 +4,7 @@
 
 CREATE TABLE public.sec_user
 (
-  id bigint NOT NULL DEFAULT nextval('sec_user_id_seq'::regclass),
+  id bigserial,
   code character varying(50),
   name character varying(150),
   first_name character varying(50),
@@ -28,7 +28,7 @@ CREATE TABLE public.sec_user
   gender smallint,
   CONSTRAINT pk_user PRIMARY KEY (id),
   CONSTRAINT unique_code_user UNIQUE (code)
-)
+);
 
 -- Table: public.sec_role
 
@@ -36,7 +36,7 @@ CREATE TABLE public.sec_user
 
 CREATE TABLE public.sec_role
 (
-  id bigint NOT NULL DEFAULT nextval('sec_role_id_seq'::regclass),
+  id bigserial,
   code character varying(50),
   name character varying(150),
   remarks character varying(256),
@@ -47,7 +47,7 @@ CREATE TABLE public.sec_role
   updated_on timestamp without time zone,
   CONSTRAINT pk_role PRIMARY KEY (id),
   CONSTRAINT unique_role UNIQUE (code)
-)
+);
 
 
 -- Table: public.link_user_role
@@ -65,5 +65,4 @@ CREATE TABLE public.link_user_role
       REFERENCES public.sec_user (id) MATCH SIMPLE
       ON UPDATE NO ACTION ON DELETE NO ACTION
 )
-
 
