@@ -68,7 +68,7 @@ export class RegistrationFormComponent implements OnInit {
 
   register(){    
     this.submitted = true;
-    if (this.registrationForm.invalid) {      
+    if (this.registrationForm.invalid) {
       return;
     }else {
       this.registrationData = new RequestRegistration();
@@ -95,7 +95,7 @@ export class RegistrationFormComponent implements OnInit {
       }), error => {
         console.log("An Error Occured "+error);
       };            
-    }
+    }    
   }
 
   ngOnInit() {
@@ -112,6 +112,10 @@ export class RegistrationFormComponent implements OnInit {
 
     this.dayMonthContent();
     this.yearContent();
+  }
+
+  setSubmitted(submitted : boolean) {
+    this.submitted = submitted;
   }
 
 }

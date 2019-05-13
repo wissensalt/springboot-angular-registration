@@ -2,6 +2,6 @@ import { AuthGuard } from './auth-guard';
 
 describe('AuthGuard', () => {
   it('should create an instance', () => {
-    expect(new AuthGuard()).toBeTruthy();
+    expect(new AuthGuard(null)).toBeTruthy();
   });
 });

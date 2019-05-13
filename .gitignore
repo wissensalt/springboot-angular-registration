@@ -1,0 +1,6 @@
+spring-angular-registration/.gitignore
+spring-angular-registration/.mvn/
+spring-angular-registration/mvnw
+spring-angular-registration/mvnw.cmd
+web-angular-registration/node_modules/
+

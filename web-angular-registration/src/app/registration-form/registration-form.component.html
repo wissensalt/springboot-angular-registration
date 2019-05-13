@@ -1,25 +1,24 @@
-<div class="container text-center">
+<div class="container">
     <div class="row">
         <div class="col-md-2">
             <h3>Registration</h3>
         </div>
+        <!-- *ngIf="submitted" -->
         <div class="col-md-4">
-            <div class="alert alert-danger" *ngIf="submitted" >
-                <div *ngIf="registrationForm.controls['mobileNumber'].errors">
-                    <div *ngIf="registrationForm.controls['mobileNumber'].errors.required">Mobile Number is required</div>
-                    <div *ngIf="registrationForm.controls['mobileNumber'].errors.pattern">Please Enter Valid Indonesian
-                        Phone Number</div>
-                </div>
-                <div *ngIf="registrationForm.controls['firstName'].errors">
-                    <div *ngIf="registrationForm.controls['firstName'].errors.required">First Name is required</div>
-                </div>
-                <div *ngIf="registrationForm.controls['lastName'].errors">
-                    <div *ngIf="registrationForm.controls['lastName'].errors.required">Last Name is required</div>
-                </div>
-                <div *ngIf="registrationForm.controls['email'].errors">
-                    <div *ngIf="registrationForm.controls['email'].errors.required">Email is required</div>
-                    <div *ngIf="registrationForm.controls['email'].errors.email">Please Enter Valid Email Format</div>
-                </div>
+            <div class="alert alert-danger" *ngIf="registrationForm.controls['mobileNumber'].errors  && submitted">
+                <div *ngIf="registrationForm.controls['mobileNumber'].errors.required">Mobile Number is required</div>
+                <div *ngIf="registrationForm.controls['mobileNumber'].errors.pattern">Please Enter Valid Indonesian
+                    Phone Number</div>
+            </div>
+            <div class="alert alert-danger" *ngIf="registrationForm.controls['firstName'].errors && submitted">
+                <div *ngIf="registrationForm.controls['firstName'].errors.required">First Name is required</div>
+            </div>
+            <div class="alert alert-danger" *ngIf="registrationForm.controls['lastName'].errors  && submitted">
+                <div *ngIf="registrationForm.controls['lastName'].errors.required">Last Name is required</div>
+            </div>
+            <div class="alert alert-danger" *ngIf="registrationForm.controls['email'].errors  && submitted">
+                <div *ngIf="registrationForm.controls['email'].errors.required">Email is required</div>
+                <div *ngIf="registrationForm.controls['email'].errors.email">Please Enter Valid Email Format</div>
             </div>
         </div>
     </div>
@@ -70,7 +69,6 @@
                 <label class="radio-inline" for="female">
                     <input id="male" type="radio" value="0" name="gender" formControlName="gender"> Female
                 </label>
-
                 <div class="form-group">
                     <input type="email" formControlName="email" placeholder="Email" class="form-control" id="email">
                 </div>
