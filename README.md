@@ -75,3 +75,5 @@ API :
     $ mvn clean package
 ```
 <img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-test-3.png" alt="springboot-angular-registration"/>
+
+#### *Username for Login is Email and Password is FirstName
