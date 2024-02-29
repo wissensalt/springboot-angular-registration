@@ -4,3 +4,7 @@ spring-angular-registration/mvnw
 spring-angular-registration/mvnw.cmd
 web-angular-registration/node_modules/
 
+.idea/
+**/target/
+**.log
+**.iml

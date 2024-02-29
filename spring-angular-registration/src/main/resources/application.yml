@@ -18,10 +18,11 @@ spring:
   application:
     name : spring-angular-registration
   datasource:
+    initialization-mode: always
     driver-class-name : org.postgresql.Driver
-    url : jdbc:postgresql://${db.host}:${db.port}/${db.name}
-    username : ${db.username}
-    password : ${db.password}
+    url : jdbc:postgresql://localhost:5432/sar_db
+    username : postgres
+    password : pgadmin
     hikari:
       minimumIdle: 1
       maximumPoolSize: 5
@@ -37,21 +38,10 @@ spring:
           lob:
             non_contextual_creation: true
         naming_strategy : org.hibernate.cfg.EJB3NamingStrategy
-        dialect : org.hibernate.dialect.PostgreSQL9Dialect
-        ddl-auto : validate     # Hibernate ddl auto (create, create-drop, validate, update)
-
-#============================================================================
-# DATABASE
-#============================================================================
-db:
-  name : test_security
-  host : localhost
-  port : 5432
-  username : postgres
-  password : pgadmin
-  auto-reconnect : true
-  ssl : false
-
+        dialect: org.hibernate.dialect.PostgreSQL9Dialect
+        ddl-auto: validate     # Hibernate ddl auto (create, create-drop, validate, update)
+    hibernate:
+      ddl-auto: none
 #============================================================================
 # LOGGER
 #============================================================================
@@ -67,4 +57,4 @@ logging:
 #============================================================================
 log :
   file :
-    path : /home/fauzi/sar/sar.log
+    path : ./sar.log

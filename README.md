@@ -16,7 +16,7 @@ API :
   - Spring Test
   
 # Steps to run the project 
-  - Create DB and Restore file **db.sql**
+  - Create DB and Restore file **schema.sql**
   - Run Backend **spring-angular-registration** and make sure there is no Error
   - Run Frontend **web-angular-registration**
   
@@ -47,17 +47,12 @@ API :
   - Open browser and go to http://localhost:4200
   - port 4200 is default, you can change with command --port to change the port
 
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-1.png" alt="springboot-angular-registration"/>
-
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-2.png" alt="springboot-angular-registration"/>
-
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-3.png" alt="springboot-angular-registration"/>
-
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-4.png" alt="springboot-angular-registration"/>
-
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-5.png" alt="springboot-angular-registration"/>
-
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-6.png" alt="springboot-angular-registration"/>
+![sar-1.png](sar-1.png)
+![sar-2.png](sar-2.png)
+![sar-3.png](sar-3.png)
+![sar-4.png](sar-4.png)
+![sar-5.png](sar-5.png)
+![sar-6.png](sar-6.png)
 
 # How To Run Unit Testing : web-angular-registration (frontend)
   - Run :
@@ -65,15 +60,15 @@ API :
     $ ng test
 ```  
 
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-test-1.png" alt="springboot-angular-registration"/>
-
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-test-2.png" alt="springboot-angular-registration"/>
+![sar-test-1.png](sar-test-1.png)
+![sar-test-2.png](sar-test-2.png)
 
 # How To Run Unit Testing : spring-angular-registration (backend)
   - Run :
 ```sh
     $ mvn clean package
 ```
-<img src="https://raw.githubusercontent.com/KNIGHTMASTER/Resources/master/SAR/sar-test-3.png" alt="springboot-angular-registration"/>
+
+![sar-test-3.png](sar-test-3.png)
 
 #### *Username for Login is Email and Password is FirstName

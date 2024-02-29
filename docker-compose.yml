@@ -1,0 +1,11 @@
+version: "3.8"
+services:
+  db:
+    image: postgres:9-alpine
+    container_name: sar_db
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USERNAME=postgres
+      - POSTGRES_PASSWORD=pgadmin
+      - POSTGRES_DB=sar_db
